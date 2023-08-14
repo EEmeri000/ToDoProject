@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+React To-Do List: Project Prompt
+Our goal is to create a To Do List UI. This UI will have 6 main components:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+6 components (Header, Sign In, To Do(to do list, to do, to do form), Completed List)
 
-## Available Scripts
+A sign in form that links to the task list
 
-In the project directory, you can run:
+Header that labels the 'To Do list'. This is just a basic application identifier
 
-### `npm start`
+A form that adds a To Do task item to the list. The default complete should be set to false.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A list to display each to do item. Next to each item will be three buttons displayed(check box, a trash can, edit button).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+When the check box is clicked it checks it off and puts a line through the text then adds this task to to the completed list page.
+When the trash can button is clicked it deletes the item from the list
+When the edit button is clicked you are able to change the text
+A page that list all the completed tasks once marked as completed
 
-### `npm test`
+Step-by-Step start to creating a to do list
+Create a React application npm: npx create-react-app todo-list
+cd into todo-list and run npm install. Next npm start. Your project should now be served on localhost:300
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create components folder
+We will create a components folder in the src directory and add 4 folders within it:
 
-### `npm run build`
+Header Sign In Todo Completed
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Inside these folders we will add files in each folder
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Header
+Header.js - This is where all of our functional components will go. Header.css - This is where the styles for the application will go.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sign In
+SignIn.js - This is where all of our functional components will go. SignIn.css - This is where the styles for the application will go.
 
-### `npm run eject`
+Todo
+ToDo.js - This is where all of our functional components will go. ToDoForm.js - This is where all of our functional components will go. ToDOList.js - This is where all of our functional components will go. ToDo.css - This is where the styles for the application will go.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Completed
+Completed.js - This is where all of our functional components will go. Completed.css - This is where the styles for the application will go.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+App.js Navigate to App.js and get rid of everything between the two
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+tags.
+Header Then, Create a presentational component that will display a header identifying the name of your application. Export your Header and import it to App.js. In the empty
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+, add .
+DAY 1
+Each section will be broken into 7 days. We will work step by step to make sure each task for this assignment is completed in a timely manner.
 
-## Learn More
+Create Figma Mockup - 20 mins Before you get started let create a mockup of what your application will look like.
+Go to figma.com and create an account. Here we will work through create a mockup and prototype on figma together.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once the mockup is created you will go back to your React application and build out your first page(Sign up).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+alt text
 
-### Code Splitting
+Sign Up - 30mins-1hr You will have create a sign in page similar to the one below. Add your own styling to make it more unique.
+This page will consist of a title.
+A small message prompting the user to sign up.
+An username, email and password field.
+A Sign Up button. (For now the only functionality this button will have is when it is clicked on it will direct the user to the ToDo list page)
+Create Figma Mockup(ToDoList) - 30 mins Create mockup fo your you to do list page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Input Form (ToDoForm page) Create an input that takes in a task and adds it to your to do list.
