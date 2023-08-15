@@ -1,10 +1,15 @@
-import React from "react";
+import React from 'react'
+import './Header.css'
 
-function  Header() {
-    return (
-        <div>
-        <h1>My ToDo List</h1>
-        </div>
-    );
-};
-export default Header;
+function Header() {
+  return (
+    <div>
+       <div className="title">
+<h1>Welcome to Task Manager</h1>
+<p> Please create an account here.  </p>
+</div>
+    </div>
+  )
+}
+
+export default Header
