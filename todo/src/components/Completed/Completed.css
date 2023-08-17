@@ -9,3 +9,7 @@
 .completed-list {
     list-style-type: none;
 }
+
+.completed-item {
+    font-size: 18px; 
+  }
