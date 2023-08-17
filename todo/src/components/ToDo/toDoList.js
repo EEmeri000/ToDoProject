@@ -25,29 +25,37 @@ function ToDoList(){
         }
     ]);
     
-    const addTask = title => {
+    const addTask = (title) => {
         const newTasks = [...tasks, { id: tasks.length + 1, title, completed: false }];
         setTasks(newTasks);
-        console.log(tasks)
-    }
-
-
-    const handleRemove = index => {
-        setTasks(oldValues => {
-          return oldValues.filter((_, i) => i !== index)
-        })
-    }
+      }
     
-    const handleCheck = (taskId) => {
+      const handleCheck = (taskId) => {
         const updatedTasks = tasks.map((task) => {
           if (task.id === taskId) {
-            return { ...task, completed: true };
+            return { ...task, completed: !task.completed };
           }
           return task;
         });
     
         setTasks(updatedTasks);
       };
+    
+      const handleRemove = (index) => {
+        setTasks(oldValues => oldValues.filter((_, i) => i !== index));
+      }
+    
+      const handleEdit = (index, newTitle) => {
+        const updatedTasks = tasks.map((task, i) => {
+          if (i === index) {
+            return { ...task, title: newTitle };
+          }
+          return task;
+        });
+    
+        setTasks(updatedTasks);
+      };
+    
     
       const completedTasks = tasks.filter((task) => task.completed);
 
@@ -56,7 +64,7 @@ function ToDoList(){
 
       return (
         <div className="todo-container">
-          <div className="header">TODO - ITEMS</div>
+          <div className="header">Tasks to Manage</div>
           <div className="tasks">
             {tasks.map((task, index) => (
               <ToDo
@@ -65,6 +73,7 @@ function ToDoList(){
                 key={index}
                 handleCheck={handleCheck} 
                 handleRemove={handleRemove}
+                handleEdit={handleEdit}
               />
             ))}
           </div>
