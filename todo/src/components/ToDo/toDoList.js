@@ -64,7 +64,7 @@ function ToDoList(){
 
       return (
         <div className="todo-container">
-          <div className="header">Tasks to Manage</div>
+          <div className="header"><h3><b>Tasks to Manage</b></h3></div>
           <div className="tasks">
             {tasks.map((task, index) => (
               <ToDo

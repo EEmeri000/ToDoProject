@@ -16,3 +16,21 @@ input[type=checkbox]:checked + .task {
     padding: 2rem;
     width: 80%;
   }
+.save-button {
+    background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .save-button:active {
+    background-color: #1f77a5;
+  }

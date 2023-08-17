@@ -31,7 +31,7 @@ function ToDo({ task, index, handleCheck, handleRemove, handleEdit }) {
                 value={editedTitle}
                 onChange={(e) => setEditedTitle(e.target.value)}
               />
-              <button onClick={saveEditedTask}>Save</button>
+              <button className="save-button"onClick={saveEditedTask}>Save</button>
             </>
           ) : (
             <>
