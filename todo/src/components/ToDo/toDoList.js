@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import ToDoForm from './ToDoForm'
 import ToDo from './ToDo'
 import Completed from '../Completed/Completed';
@@ -7,6 +8,7 @@ import './ToDo.css'
 
 function ToDoList(){
 
+    const navigate = useNavigate();
     const [tasks, setTasks] = useState([
         {
             id: 1,
@@ -59,7 +61,14 @@ function ToDoList(){
     
       const completedTasks = tasks.filter((task) => task.completed);
 
-   
+    //   const goToCompleted = () => {
+    //     navigate('/completed'); // This is broken
+    //   };
+    
+      const logout = () => {
+        navigate('/'); 
+      };
+    
 
 
       return (
@@ -80,7 +89,15 @@ function ToDoList(){
           <div className="create-task">
             <ToDoForm addTask={addTask} handleRemove={handleRemove} />
           </div>
-          <Completed completedTasks={completedTasks} /> {/* Add the Completed component */}
+          <Completed completedTasks={completedTasks} /> 
+          <div>
+        {/* <button onClick={goToCompleted} className="theme-button">
+          Completed Tasks
+        </button> */}
+        <button onClick={logout} className="theme-button">
+          Logout
+        </button>
+      </div>
         </div>
       );
     }
