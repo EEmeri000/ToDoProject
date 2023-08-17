@@ -1,0 +1,9 @@
+.task::placeholder {
+    color: black;
+    font-size: smaller;
+}
+
+input[type=checkbox]:checked + .task {
+    color:green;
+    text-decoration: line-through;
+  } 

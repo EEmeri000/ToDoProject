@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import SignUp from './components/SignUp/SignUp';
-import ToDo from './components/ToDo/ToDo';
+import ToDoList from './components/ToDo/ToDoList';
 
 
 
@@ -14,7 +14,7 @@ function App() {
 
   <Routes>
   <Route path="/" element={<SignUp />} />
-  <Route path="/todo" element={<ToDo />}/>
+  <Route path="/todolist" element={<ToDoList />}/>
   </Routes>
 
 </BrowserRouter>
