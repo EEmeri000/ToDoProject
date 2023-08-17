@@ -64,6 +64,7 @@ function ToDoList(){
                 index={index}
                 key={index}
                 handleCheck={handleCheck} 
+                handleRemove={handleRemove}
               />
             ))}
           </div>
