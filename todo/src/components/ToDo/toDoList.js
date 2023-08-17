@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import ToDoForm from './ToDoForm'
 import ToDo from './ToDo'
+import Completed from '../Completed/Completed';
 import './ToDo.css'
 
 
-function ToDoList({handleCheck}){
+function ToDoList(){
 
     const [tasks, setTasks] = useState([
         {
@@ -37,40 +38,41 @@ function ToDoList({handleCheck}){
         })
     }
     
-
-
-    // const onChangeBox = task => {
-    //     const newTasks = [...tasks, { id: tasks.length + 1, title, completed: false }];
-    //     setTasks(newTasks);
-    // }
+    const handleCheck = (taskId) => {
+        const updatedTasks = tasks.map((task) => {
+          if (task.id === taskId) {
+            return { ...task, completed: true };
+          }
+          return task;
+        });
     
+        setTasks(updatedTasks);
+      };
+    
+      const completedTasks = tasks.filter((task) => task.completed);
 
-
-  return (
    
 
-    
-    <div className="todo-container">
-    <div className="header">TODO - ITEMS</div>
-    <div className="tasks">
-        
-        {tasks.map((task, index) => (
-            <ToDo
-                task={task} 
-                index={index} 
+
+      return (
+        <div className="todo-container">
+          <div className="header">TODO - ITEMS</div>
+          <div className="tasks">
+            {tasks.map((task, index) => (
+              <ToDo
+                task={task}
+                index={index}
                 key={index}
-            
-            />
-        ))}
-    </div>
-    <div className="create-task">
-        <ToDoForm addTask={addTask} handleRemove={handleRemove} />
-    </div>
-    </div>
-    
-    
- 
-  )
-}
+                handleCheck={handleCheck} 
+              />
+            ))}
+          </div>
+          <div className="create-task">
+            <ToDoForm addTask={addTask} handleRemove={handleRemove} />
+          </div>
+          <Completed completedTasks={completedTasks} /> {/* Add the Completed component */}
+        </div>
+      );
+    }
 
 export default ToDoList

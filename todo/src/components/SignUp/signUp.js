@@ -25,7 +25,7 @@ const handleSignUp = (e) => {
     setPassword('')
     setEmail('')
     setName('')
-    navigate('/todo')
+    navigate('/todolist')
 
     }
     };
